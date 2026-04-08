@@ -45,7 +45,7 @@ Response (answer + sources + latency)
 | Layer | Technology |
 |---|---|
 | API Framework | FastAPI |
-| LLM | Ollama (`phi3:14b`) |
+| LLM | Ollama (`mistral`) |
 | Embeddings | Ollama (`mxbai-embed-large`) |
 | Vector Store | ChromaDB |
 | Orchestration | LangChain |
@@ -60,7 +60,7 @@ Response (answer + sources + latency)
 - [Ollama](https://ollama.com) installed and running
 - Pull required models:
 ```bash
-ollama pull phi3:14b
+ollama pull mistral
 ollama pull mxbai-embed-large
 ```
 
