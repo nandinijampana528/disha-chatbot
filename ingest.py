@@ -7,9 +7,16 @@ Usage:
     python ingest.py --docs_dir ./documents --reset
 """
 
+import os
+
+os.environ["NO_PROXY"] = "localhost,127.0.0.1"
+os.environ["no_proxy"] = "localhost,127.0.0.1"
+
+
+
 import argparse
 import logging
-import os
+
 from pathlib import Path
 
 from langchain_community.document_loaders import (
@@ -17,7 +24,7 @@ from langchain_community.document_loaders import (
 )
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_chroma import Chroma
-from langchain_community.embeddings import OllamaEmbeddings
+from langchain_ollama import OllamaEmbeddings
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
