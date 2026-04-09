@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-from typing import Optional, List
+from typing import Optional, List, Union
 
 
 class QueryRequest(BaseModel):
@@ -10,7 +10,7 @@ class QueryRequest(BaseModel):
 
 class SourceDoc(BaseModel):
     source: str
-    page: Optional[str] = ""
+    page: Optional[Union[str,int]] = ""
     snippet: str
 
 

@@ -1,31 +1,38 @@
 import logging
 from functools import lru_cache
 from langchain_chroma import Chroma
-from langchain_community.embeddings import OllamaEmbeddings
-from langchain_community.chat_models import ChatOllama
-from langchain.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain_ollama import OllamaEmbeddings
+from langchain_ollama import ChatOllama
+from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnablePassthrough, RunnableLambda
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.messages import HumanMessage, AIMessage
 from app.core.config import settings
 
+import os
+os.environ["NO_PROXY"] = "localhost,127.0.0.1"
+os.environ["no_proxy"] = "localhost,127.0.0.1"
+
 logger = logging.getLogger(__name__)
 
 SYSTEM_PROMPT = """You are {bot_name}, the AI assistant for {company_name}.
 
-Guidelines:
-- If the user greets you, greet them back warmly and introduce yourself.
-- Answer ONLY based on the provided context.
-- If the answer is not in the context, say: "I don't have information on that. Please contact the {company_name} support team."
-- Be concise, professional, and helpful.
-- Never make up information.
+STRICT RULES:
+- Answer ONLY the specific question asked. Do not dump all document content.
+- Use ONLY the most relevant part of the context.
+- If the answer is not clearly in the context, say: "I don't have that information."
+- Be concise. 2-3 sentences maximum unless a detailed answer is truly needed.
+- Never list unrelated information from other documents.
 
 Context:
 {context}
 
 Chat History:
 {chat_history}
-"""
+
+Question: {question}
+
+Answer concisely and only what was asked:"""
 
 
 @lru_cache(maxsize=1)

@@ -11,7 +11,7 @@ class Settings(BaseSettings):
 
     # Ollama
     OLLAMA_BASE_URL: str = "http://localhost:11434"
-    CHAT_MODEL: str = "phi3:14b"
+    CHAT_MODEL: str = "mistral"
     EMBED_MODEL: str = "mxbai-embed-large"
 
     # ChromaDB
@@ -19,7 +19,7 @@ class Settings(BaseSettings):
     CHROMA_COLLECTION: str = "nspcl_docs"
 
     # Retriever
-    RETRIEVER_K: int = 3
+    RETRIEVER_K: int = 1
     RETRIEVER_TYPE: str = "mmr"
 
     # Chat
