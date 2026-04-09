@@ -168,5 +168,5 @@ This project uses **Ollama** to run LLMs entirely on-premise — no data leaves 
 
 ## Author
 
-**Nandini Jampana** — Engineer at NTPC Ltd.  
-[GitHub](https://github.com/nandinijampana) · [LinkedIn](https://linkedin.com/in/nandinijampana)
+**Nandini Jampana** — nandinijampana528@gmail.com  
+[GitHub](https://github.com/nandinijampana528/) · [LinkedIn](https://www.linkedin.com/in/nandini-jampana-714524172/)
