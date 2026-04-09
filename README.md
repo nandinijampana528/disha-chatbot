@@ -36,7 +36,7 @@ Response (answer + sources + latency)
 - **Source Transparency** — returns which documents were used to answer
 - **Configurable via `.env`** — swap models, paths, collections without touching code
 - **Document Ingestion Script** — ingest PDF, TXT, DOCX files into ChromaDB
-- **Production-ready** — CORS, logging, error handling, latency tracking
+- **Production-ready** — CORS, logging, error handling, latency tracking.
 
 ---
 
@@ -159,6 +159,12 @@ disha-chatbot/
 This project uses **Ollama** to run LLMs entirely on-premise — no data leaves your server. This is critical for enterprise environments like power companies where document confidentiality is non-negotiable.
 
 ---
+
+## Reference Image
+
+![alt text](image.png)
+
+------
 
 ## Author
 
